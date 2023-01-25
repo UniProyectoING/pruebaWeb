@@ -1,0 +1,137 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+    <header class="header" id="inicio">
+        <img src='{% static "Menu_icon.svg" %}' alt="" class="hamburger">
+        <nav class="menu-navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#Servicio">Servicio</a>
+            <a href="#Instalaciones">Instalaciones</a>
+            <a href="#Noticias">Noticias</a>
+            <a href="#Reseña historica">Reseña historica</a>
+            <a href="#Contacto">Contacto</a>
+        </nav>
+        <div class="contenedor-head">
+            <h1 class="titulo">U.E.C. José María España</h1>
+            <p class="copy"></p>
+        </div>
+        
+    </header>
+    <main>
+        
+        <section class="services contenedor" id="Servicio">
+            <h2 class="subtitulo">Servicio</h2>
+            <div class="contenedor-servicio">
+                
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Desarrollo y diseño web</h3>
+                        <p></p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Seguridad</h3>
+                        <p></p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Mantenimiento</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="gallery" id="Instalaciones">
+            <div class="contenedor">
+                <h2 class="subtitulo">Instalaciones</h2>
+                <div class="contenedor-galeria">
+                    <img src='{% static "image_1.jpg" %}' alt="" class="img-galeria">
+                    <img src='{% static "image_2.jpg" %}' alt="" class="img-galeria">
+                    <img src='{% static "image_3.jpg" %}' alt="" class="img-galeria">
+                    <img src='{% static "image_4.jpg" %}' alt="" class="img-galeria">
+                </div>
+            </div>
+        </section>
+        <section class="imagen-light">
+            <img src='{% static "Close_icon.svg" %}' alt="" class="close">
+            <img src='{% static "image_1.jpg" %}' alt="" class="agregar-imagen">
+        </section>
+        <section class="noticias" id="Noticias">
+            <div class="contenedor">
+                <h2 class="subtitulo">Noticias</h2>
+                {# <div class="contenedor-galeria">
+                    {% for noticia in noticias %}
+                        <div style="width: 20%;">
+                            <h3 style="text-align: center;">{{noticia.Titulo}}</h3>
+                            <p style="padding: 5px; text-align:center;">{{noticia.Contenido}}</p>
+                            <p><img src={{noticia.Imagen.url}} class="img-galeria" style="height: 20vw; width: 19vw;"></p>
+                        </div>
+                    {% endfor %} #}
+                </div>
+            </div>
+        </section>
+        <section class="contenedor" id="Reseña historica">
+            <h2 class="subtitulo">Reseña historica</h2>
+            <section class="experts">
+                <div class="cont-expert">
+                    <img src='{% static "Teacher_Flatline.png" %}' alt="">
+                    <h3 class="n-expert">Misión</h3>
+                </div>
+                <div class="cont-expert">
+                    <img src='{% static "School_Outline.svg" %}' alt="">
+                    <h3 class="n-expert">Visión</h3>
+                </div>
+                
+            </section>
+        </section>
+        <section class="contenedor">
+            <div>
+                <h3 class="subtitulo">Solicitar requisitos de inscripción por email</h3>
+                <div class="cont-input">
+                    <form action="" method="POST"> {% csrf_token %}
+                        <input type="email" name="email" placeholder="Escriba su dirección de correo aquí" class="input">
+                        <br><input type="submit" value="Solicitar" class="button">
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+    <footer id="Contacto">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h2 class="brand">Proyecto Socio Tecnológico</h2>
+                <p>UPTJAA</p>
+            </div>
+            <div class="social-media">
+                <a href="./" class="social-media-icon">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    
+    
+    <script src='{% static "menu.js" %}'></script>
+    <script src='{% static "lightbox.js" %}'></script>
+
+</body>
+</html>
+
