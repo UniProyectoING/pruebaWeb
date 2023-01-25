@@ -21,7 +21,8 @@ DIR_TEMPLATES = BASE_DIR / 'appPrueba/templates'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!ig69tt6xr8gynyobp(og-$25px3jcldy_)!^gs$l3w_&w2ycu'
+#SECRET_KEY = 'django-insecure-!ig69tt6xr8gynyobp(og-$25px3jcldy_)!^gs$l3w_&w2ycu'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -31,6 +32,9 @@ DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
 '',]
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:    
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
