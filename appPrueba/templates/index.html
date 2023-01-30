@@ -13,7 +13,12 @@
     <title></title>
     <style>
         header {
-          background-image: url('{% static "banner.jpeg" %}');
+            height: 100vh;
+            background-image: linear-gradient(to top, hsla(258, 43%, 68%, 0.5) 0%, rgb(251, 194, 235, 0.5) 100%), url('{% static "banner.jpeg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
     </style>
 </head>
@@ -74,14 +79,14 @@
         <section class="noticias" id="Noticias">
             <div class="contenedor">
                 <h2 class="subtitulo">Noticias</h2>
-                {# <div class="contenedor-galeria">
+                <div class="contenedor-galeria">
                     {% for noticia in noticias %}
                         <div style="width: 20%;">
                             <h3 style="text-align: center;">{{noticia.Titulo}}</h3>
                             <p style="padding: 5px; text-align:center;">{{noticia.Contenido}}</p>
                             <p><img src={{noticia.Imagen.url}} class="img-galeria" style="height: 20vw; width: 19vw;"></p>
                         </div>
-                    {% endfor %} #}
+                    {% endfor %}
                 </div>
             </div>
         </section>
